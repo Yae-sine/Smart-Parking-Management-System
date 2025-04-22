@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <link href="{{ url_for('static', filename='css/input.css') }}" rel="stylesheet">
+</head>
+
+<body class="relative min-h-screen p-4">
+    <div class="fixed inset-0 bg-cover bg-center" style="background-image: url('{{ url_for('static', filename='images/event-parking.jpg') }}'); z-index: -2;"></div>
+    
+    <div class="fixed inset-0 bg-black bg-opacity-60" style="z-index: -1;"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+        <header class="mb-12 pt-6">
+            <div class="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-800 rounded-xl shadow-2xl p-6 text-center transform transition-transform">
+                <div class="flex items-center justify-center space-x-4">
+                    <i class="fas fa-car text-white text-3xl"></i>
+                    <h1 class="text-4xl font-bold text-white tracking-wider">SMART PARKING DASHBOARD</h1>
+                    <i class="fas fa-car text-white text-3xl"></i>
+                </div>
+                <div class="mt-2 h-1 w-32 bg-white mx-auto rounded-full"></div>
+            </div>
+        </header>
+        
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-gradient-to-br from-green-500 to-green-700 rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="bg-white bg-opacity-20 rounded-full p-3 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check-circle text-white text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-white">Available</h2>
+                <p id="available-count" class="text-4xl font-bold text-white mt-2">2</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-red-500 to-red-700 rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="bg-white bg-opacity-20 rounded-full p-3 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-times-circle text-white text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-white">Occupied</h2>
+                <p id="occupied-count" class="text-4xl font-bold text-white mt-2">2</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="bg-white bg-opacity-20 rounded-full p-3 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-parking text-white text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-white">Total Spots</h2>
+                <p id="total-count" class="text-4xl font-bold text-white mt-2">4</p>
+            </div>
+        </section>
+        
+        <section class="mb-8">
+            <div class="text-center mb-8">
+                <h2 class="relative inline-block text-3xl font-bold text-white">
+                    <span class="relative z-10">PARKING MAP</span>
+                    <div class="absolute -bottom-2 left-0 w-full h-3 bg-blue-500 opacity-40 rounded-lg"></div>
+                </h2>
+            </div>
+            
+            <div class="flex flex-wrap justify-between gap-6">
+                <div class="bg-gradient-to-br from-green-100 to-green-200 border-l-8 border-green-500 rounded-lg shadow-xl p-6 w-full md:w-1/5 text-center transform transition-all duration-300 hover:translate-y-1 hover:shadow-2xl " id="spot1">
+                    <div class="mb-3">
+                        <span class="badge inline-block bg-green-500 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">1</span>
+                    </div>
+                    <p class="font-semibold text-gray-800 text-lg">Spot 1</p>
+                    <p class="status-text text-green-600 font-bold text-xl mt-2">Available</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-100 to-green-200 border-l-8 border-green-500 rounded-lg shadow-xl p-6 w-full md:w-1/5 text-center transform transition-all duration-300 hover:translate-y-1 hover:shadow-2xl" id="spot2">
+                    <div class="mb-3">
+                        <span class="badge inline-block bg-green-500 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">2</span>
+                    </div>
+                    <p class="font-semibold text-gray-800 text-lg">Spot 2</p>
+                    <p class="status-text text-green-600 font-bold text-xl mt-2">Available</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-100 to-red-200 border-l-8 border-red-500 rounded-lg shadow-xl p-6 w-full md:w-1/5 text-center transform transition-all duration-300 hover:translate-y-1 hover:shadow-2xl" id="spot3">
+                    <div class="mb-3">
+                        <span class="badge inline-block bg-red-500 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">3</span>
+                    </div>
+                    <p class="font-semibold text-gray-800 text-lg">Spot 3</p>
+                    <p class="status-text text-red-600 font-bold text-xl mt-2">Occupied</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-100 to-red-200 border-l-8 border-red-500 rounded-lg shadow-xl p-6 w-full md:w-1/5 text-center transform transition-all duration-300 hover:translate-y-1 hover:shadow-2xl" id="spot4">
+                    <div class="mb-3">
+                        <span class="badge inline-block bg-red-500 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">4</span>
+                    </div>
+                    <p class="font-semibold text-gray-800 text-lg">Spot 4</p>
+                    <p class="status-text text-red-600 font-bold text-xl mt-2">Occupied</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-12 text-white text-opacity-70">
+            <p>© 2025 Smart Parking System</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

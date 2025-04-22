@@ -1,0 +1,16 @@
+# Node.js dependencies
+node_modules/
+
+# Python virtual environment
+FlaskPrj/venv/
+
+# Environment files
+.env
+
+# OS and IDE specific
+.DS_Store
+__pycache__/
+*.pyc
+
+# Logs
+*.log
