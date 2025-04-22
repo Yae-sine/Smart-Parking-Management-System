@@ -12,7 +12,7 @@ def home():
 
 @app.route("/spots")
 def get_spots():
-    with open("status.json") as f:
+    with open("../AI/status.json") as f:
         data = json.load(f)
     return jsonify(data)
 
