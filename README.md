@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/2faa13de-c75f-4334-b62b-c932f4a56929
 
 ## ✨ Features <a name="features"></a>
 - 🚘 Real-time vehicle detection using YOLOv8
-- 🟢🔴 Visual parking space status (Green=Available, Red=Occupied)
+- 🟢🔴 Visual parking space status (Green=A Spot Is Available, Red=All Occupied)
 - 🌐 REST API for integration with web/mobile apps
 - 🖥️ Simple web interface for monitoring
 - 🛠️ Customizable parking space layout
