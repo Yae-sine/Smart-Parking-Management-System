@@ -41,6 +41,8 @@ graph TD
     B --> C[status.json]
     C --> D[Flask API]
     D --> E[Web Interface]
+    D --> F[Raspberry Pi]
+    F --> G[LED Indicators]
 ```
 
 ## ⚙️Installation  <a name="installation"></a>
