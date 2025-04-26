@@ -12,9 +12,12 @@ def home():
 
 @app.route("/spots")
 def get_spots():
-    with open("../AI/status.json") as f:
-        data = json.load(f)
-    return jsonify(data)
+    try:
+        with open("../AI/status.json") as f:
+            data = json.load(f)
+        return jsonify(data)
+    except:
+        return jsonify({})
 
-if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+if __name__ == "_main_":
+    app.run(debug=True, host='0.0.0.0',port=5000)
