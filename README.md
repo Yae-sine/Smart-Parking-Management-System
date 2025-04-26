@@ -4,6 +4,7 @@
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.5%2B-orange)
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-ultralytics-red)
 ![Flask](https://img.shields.io/badge/Flask-2.0%2B-lightgrey)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
 A real-time computer vision solution for monitoring parking space availability using AI object detection.
 
