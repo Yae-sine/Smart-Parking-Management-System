@@ -17,22 +17,23 @@ https://github.com/user-attachments/assets/2faa13de-c75f-4334-b62b-c932f4a56929
 
 
 ## Table of Contents
-- [Features](##✨Features)
-- [System Architecture](#-system-architecture)
-- [Installation](#-installation)
-- [Raspberry Pi Integration](#-Optional)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [Troubleshooting](#-troubleshooting)
+- [Features](#features)
+- [System Architecture](#system-architecture)
+- [Installation](#installation)
+- [Raspberry Pi Integration(Optional)](#Raspberry-Pi-Integration)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
 
-## ✨ Features
-- Real-time vehicle detection using YOLOv8
-- Visual parking space status (Green=Available, Red=Occupied)
-- REST API for integration with web/mobile apps
-- Simple web interface for monitoring
-- Customizable parking space layout
+## ✨ Features <a name="features"></a>
+- 🚘 Real-time vehicle detection using YOLOv8
+- 🟢🔴 Visual parking space status (Green=Available, Red=Occupied)
+- 🌐 REST API for integration with web/mobile apps
+- 🖥️ Simple web interface for monitoring
+- 🛠️ Customizable parking space layout
+- 🍓 Optional Raspberry Pi integration for physical indicators
 
-## 🏗 System Architecture
+## 🏗 System Architecture <a name="system-architecture"></a>
 ```mermaid
 graph TD
     A[Camera Feed] --> B[Computer Vision Module]
@@ -41,7 +42,7 @@ graph TD
     D --> E[Web Interface]
 ```
 
-## ⚙️Installation
+## ⚙️Installation  <a name="installation"></a>
 
 ### Prerequisites
 - Python 3.8+
@@ -64,13 +65,13 @@ cd smart-parking-system
    pip install -r requirements.txt
 ```
 
-### Raspberry Pi Integration (Optional)
+### Raspberry Pi Integration (Optional)  <a name="Raspberry-Pi-Integration"></a>
 The Raspberry Pi component of this project is optional. You can run the AI detection system and web interface without it.
 
 The Raspberry Pi adds the following physical features to the smart parking system:
 - **LED Indicators**: 
-  - Red LED illuminates when all parking spots are occupied
-  - Green LED illuminates when at least one spot is available
+  - 🔴 Red LED illuminates when all parking spots are occupied
+  - 🟢 Green LED illuminates when at least one spot is available
 - **Barrier Control**: 
   - Works with ESP32 to control entry/exit barriers
   - Automatically opens when a car approaches
@@ -100,7 +101,8 @@ If you choose to implement the Raspberry Pi component, you'll need:
 - The ESP32 handles barrier control based on:
   - Signals from proximity sensors
   - Commands from the Raspberry Pi
- ## ⚙️ Configuration:
+    
+ ## ⚙️ Configuration: <a name="configuration"></a>
  ### Parking space configuration:
  ```bash
   -px_per_cm = 37.8                # Pixel to cm ratio
@@ -113,7 +115,7 @@ If you choose to implement the Raspberry Pi component, you'll need:
   camera_index = 0                 # Change if using different camera
   ```
 
-## 🚀 Usage
+## 🚀 Usage <a name="usage"></a>
 ### Running the System
 Start the computer vision module:
 
@@ -130,7 +132,7 @@ http://localhost:5000
  ```
 
 
-## 🚨 Troubleshooting
+## 🚨 Troubleshooting <a name="troubleshooting"></a>
 
 | Issue                      | Solution                                                                 |
 |----------------------------|--------------------------------------------------------------------------|
