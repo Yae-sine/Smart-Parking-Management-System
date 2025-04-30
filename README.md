@@ -4,6 +4,7 @@
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.5%2B-orange)
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-ultralytics-red)
 ![Flask](https://img.shields.io/badge/Flask-2.0%2B-lightgrey)
+![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
 A real-time computer vision solution for monitoring parking space availability using AI object detection.
@@ -28,7 +29,7 @@ https://github.com/user-attachments/assets/2faa13de-c75f-4334-b62b-c932f4a56929
 
 ## ✨ Features <a name="features"></a>
 - 🚘 Real-time vehicle detection using YOLOv8
-- 🟢🔴 Visual parking space status (Green=A Spot Is Available, Red=All Occupied)
+- 🟢🔴 Visual parking space status (Green=A Spot Is Available, Red= Occupied)
 - 🌐 REST API for integration with web/mobile apps
 - 🖥️ Simple web interface for monitoring
 - 🛠️ Customizable parking space layout
@@ -67,6 +68,7 @@ cd smart-parking-system
 ```bash
    pip install -r requirements.txt
 ```
+3. You need to install Tailwind CSS for the styling of the website.
 
 ### Raspberry Pi Integration (Optional)  <a name="Raspberry-Pi-Integration"></a>
 The Raspberry Pi component of this project is optional. You can run the AI detection system and web interface without it.
